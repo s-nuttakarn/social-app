@@ -1,0 +1,43 @@
+.listContainer {
+  overflow-x: auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 15px;
+  .storyList {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    .moreStories {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-25%) translateX(50%);
+      overflow: hidden;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .listContainer {
+    padding: 10px;
+    justify-content: flex-start;
+    width: auto;
+  }
+}

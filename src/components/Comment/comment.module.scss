@@ -1,0 +1,32 @@
+.commentContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: flex-start;
+  .avatarContainer {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .commentText {
+    background-color: #e8e8e8;
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 17px;
+    width: fit-content;
+  }
+  .liked {
+    font-size: 13px;
+    padding-left: 4px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.section-container {
+  width: 800px;
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .section-container {
+    width: 100%;
+  }
+}
