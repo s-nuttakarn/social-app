@@ -1,123 +1,135 @@
 .postContainer {
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  border-radius: 15px;
-  padding: 10px 15px;
-  position: relative;
-  max-width: 700px;
-  width: 100%;
-  .avatarContainer {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .profilePost {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    .postDetail {
-      display: flex;
-      flex-direction: column;
-      .name {
-        font-weight: 600;
-      }
-      .time {
-        color: #888;
-        font-size: 13px;
-      }
-    }
-  }
-  .postContent {
-    padding: 6px 0;
-    .postLiked {
-      padding: 0 5px;
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      gap: 5px;
-      color: #888;
-      i {
-        color: rgb(255, 0, 0);
-      }
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .postAction {
-    display: flex;
-    justify-content: space-around;
-    border: #ccc solid;
-    border-width: 1px;
-    border-right: 0;
-    border-left: 0;
-    padding: 4px 0;
-    div {
-      width: calc(100% / 3);
-      padding: 7px 0;
-      gap: 10px;
-      border-radius: 7px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      &:hover {
-        background-color: #f8f8f8;
-      }
-    }
-  }
-
-  .commentList {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .comment {
-    padding-top: 10px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 7px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  .post {
+    padding: 10px 15px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 700px;
+    width: 100%;
     .avatarContainer {
-      width: 35px;
-      height: 35px;
-    }
-
-    .inputContainer {
-      border-radius: 17px;
-      padding: 2px;
-      border-width: 0;
-      background-color: #e8e8e8;
-      outline: 0;
-      display: grid;
-
-      grid-template-columns: 1fr auto;
-      input,
-      input:focus {
-        border: 0;
-        padding: 0 10px;
-        outline: 0;
-        background-color: transparent;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
       }
-
-      button {
-        border: 0;
-        outline: 0;
-        background-color: transparent;
-        border-radius: 50%;
-        padding: 10px;
-        cursor: pointer;
-        &:hover {
-          background-color: #ccc;
+    }
+    .profilePost {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .postDetail {
+        display: flex;
+        flex-direction: column;
+        .name {
+          font-weight: 600;
+        }
+        .time {
+          color: #888;
+          font-size: 13px;
         }
       }
+    }
+    .postContent {
+      padding: 6px 0;
+      .postLiked {
+        padding: 0 5px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 5px;
+        color: #888;
+        i {
+          color: rgb(255, 0, 0);
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .postAction {
+      display: flex;
+      justify-content: space-around;
+      border: #ccc solid;
+      border-width: 1px;
+      border-right: 0;
+      border-left: 0;
+      padding: 4px 0;
+      div {
+        width: calc(100% / 3);
+        padding: 7px 0;
+        gap: 10px;
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          background-color: #f8f8f8;
+        }
+      }
+    }
+
+    .commentList {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .comment {
+      padding-top: 10px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 7px;
+      align-items: center;
+      .avatarContainer {
+        width: 35px;
+        height: 35px;
+      }
+
+      .inputContainer {
+        border-radius: 17px;
+        padding: 2px;
+        border-width: 0;
+        background-color: #e8e8e8;
+        outline: 0;
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+        input,
+        input:focus {
+          border: 0;
+          padding: 0 10px;
+          outline: 0;
+          background-color: transparent;
+        }
+
+        button {
+          border: 0;
+          outline: 0;
+          background-color: transparent;
+          border-radius: 50%;
+          padding: 10px;
+          cursor: pointer;
+          &:hover {
+            background-color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .postContainer{
+    .post {
+      border-radius: 0;
     }
   }
 }

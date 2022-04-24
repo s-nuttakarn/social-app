@@ -1,0 +1,129 @@
+.createPostModal {
+  .modalHeader {
+    text-align: center;
+    padding: 7px 0;
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    span {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    button {
+      background-color: #ddd;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+      outline: 0;
+      border: 0;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+  .createPostContainer {
+    padding: 5px 10px 0;
+    .inputContainer {
+      margin-top: 10px;
+      margin-right: 5px;
+      .imagePreview {
+        .imageContainer {
+          position: relative;
+          button {
+            display: none;
+            transition: all 0.4s;
+          }
+          &:hover button {
+            display: block;
+            background-color: rgba($color: #ddd, $alpha: 0.5);
+            border-radius: 50%;
+            border: 0;
+            outline: 0;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+          }
+        }
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 7px;
+        img {
+          border-radius: 10px;
+          width: 75px;
+          height: 100px;
+          object-fit: cover;
+        }
+      }
+      .input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: transparent;
+          outline: 0;
+          border: 0;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          transition: all 0.4s;
+          cursor: pointer;
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+      .inputText {
+        width: 100%;
+        resize: none;
+        border: 0;
+        outline: 0;
+        height: 300px;
+        font-size: 23px;
+      }
+      .submitPost {
+        background-color: rgb(8, 126, 223);
+        bottom: 20px;
+        width: 100%;
+        color: #fff;
+        border: 0;
+        outline: 0;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .disabled {
+        background-color: #ddd;
+        cursor: default;
+      }
+    }
+    .createPostModalHeader {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-weight: 600;
+      }
+      .avatarContainer {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
