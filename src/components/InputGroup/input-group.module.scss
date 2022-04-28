@@ -1,0 +1,17 @@
+.inputGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  width: fit-content;
+  padding: 7px 10px;
+  i {
+    color: #aaa;
+  }
+  input {
+    border: 0;
+    outline: 0;
+    width: 250px;
+  }
+}

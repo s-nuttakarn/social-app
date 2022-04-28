@@ -1,0 +1,38 @@
+.imageList {
+  .imagePreview {
+    .imageContainer {
+      position: relative;
+      button {
+        display: none;
+        transition: all 0.4s;
+      }
+      &:hover button {
+        display: block;
+        background-color: rgba($color: #ddd, $alpha: 0.5);
+        border-radius: 50%;
+        border: 0;
+        outline: 0;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 7px;
+    .container {
+      display: flex;
+      img,
+      video {
+        border-radius: 10px;
+        width: 75px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+}

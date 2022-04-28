@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
+import ImageList from "../../ImageList/ImageList";
 import Modal from "../../Model/Modal";
 import style from "./create-modal.module.scss";
 export default function CreateModal({
   show = false,
   onClose = function () {},
+  clearFiles = function () {},
+  defaultValue = {
+    text: "",
+    images: [],
+    videos: [],
+  },
 }) {
   const modalStyle = {
     maxWidth: "500px",
     overflow: "hidden",
   };
-
-  const initialState = {
-    text: "",
-    images: [],
-  };
-
-  const [post, setPost] = useState(initialState);
+  const [post, setPost] = useState(defaultValue);
   const [disabled, setDisabled] = useState(true);
   const closeModal = () => {
-    console.log("close", initialState);
-    setPost({ ...initialState });
+    setPost({ ...defaultValue });
+    clearFiles();
     onClose();
   };
   const removeImage = (id) => {
@@ -27,27 +28,19 @@ export default function CreateModal({
     images.splice(id, 1);
     setPost({ ...post, images });
   };
-  const renderImage = (image, id) => {
-    return (
-      <div className={style.imageContainer} key={id}>
-        <button type="button" onClick={() => removeImage(id)}>
-          <i className="fas fa-times" />
-        </button>
-        <img src={URL.createObjectURL(image)} alt="images" />
-      </div>
-    );
-  };
+
   useEffect(() => {
     setDisabled(post.text.length <= 0 && post.images.length <= 0);
   }, [post]);
-
+  useEffect(() => {
+    setPost({ ...defaultValue });
+  }, [defaultValue]);
   const handleChange = (e) => {
     const { name, files, value } = e.target;
     const arrayFiles = Array.from(files ?? []);
     const handleValue = arrayFiles.length > 0 ? arrayFiles : value;
     setPost({ ...post, [name]: handleValue });
   };
-
 
   const submitPost = (e) => {
     console.log(post);
@@ -87,22 +80,34 @@ export default function CreateModal({
                 placeholder="คุณกำลังคิดอะไรอยู่ FirstName"
                 className={style.inputText}
               />
-              <label htmlFor="images">
-                <i className="fas fa-image" />
-              </label>
-              <input
-                type="file"
-                multiple
-                name="images"
-                id="images"
-                accept="image/*"
-                onChange={handleChange}
-                hidden
-              />
+              <div className={style.fileUpload}>
+                <label htmlFor="images">
+                  <i className="fas fa-image" />
+                </label>
+                <input
+                  type="file"
+                  multiple
+                  name="images"
+                  id="images"
+                  accept="image/*"
+                  onChange={handleChange}
+                  hidden
+                />
+                <label htmlFor="videos">
+                  <i className="fas fa-video" />
+                </label>
+                <input
+                  type="file"
+                  multiple
+                  name="videos"
+                  id="videos"
+                  accept="video/*"
+                  onChange={handleChange}
+                  hidden
+                />
+              </div>
             </div>
-            <div className={style.imagePreview}>
-              {post.images.map(renderImage)}
-            </div>
+            <ImageList images={post.images} removeImage={removeImage} videos={post.videos}/>
             <button
               type="button"
               className={`${style.submitPost} ${disabled && style.disabled}`}

@@ -2,4 +2,28 @@
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.5) 0px 3px 15px;
   padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  .banner {
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  .navLink {
+    display: flex;
+    gap: 10px;
+    a {
+      color: #aaa;
+      text-decoration: none;
+      transition: all 0.4s;
+      &:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+    .active{
+      color: #000;
+    }
+  }
 }

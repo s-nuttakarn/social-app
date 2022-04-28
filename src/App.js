@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-
+import { BrowserRouter } from "react-router-dom";
+import AppRouting from "./index.routes";
 function App() {
   return (
-    <React.Fragment>
+    <BrowserRouter>
       <Navbar />
-      <Home />
-    </React.Fragment>
+      <AppRouting />
+    </BrowserRouter>
   );
 }
 

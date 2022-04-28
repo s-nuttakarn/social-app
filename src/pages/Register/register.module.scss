@@ -1,0 +1,27 @@
+.registerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    .inputForm {
+      text-align: center;
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 30px 40px;
+      button {
+        color: #fff;
+        border: 0;
+        outline: 0;
+        padding: 7px 10px;
+        background-color: rgb(5, 61, 214);
+        cursor: pointer;
+      }
+      span {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+  
